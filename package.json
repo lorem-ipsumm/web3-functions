@@ -1,0 +1,17 @@
+{
+  "name": "web3-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ethers": "^5.5.2"
+  }
+}
