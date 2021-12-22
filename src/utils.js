@@ -2,7 +2,7 @@ const ethers = require("ethers");
 
 // setup and return an ERC20 token based on address
 function getToken (address, wallet) {
-  // setup the sushiswap contract
+  // setup and return an ERC20 token based on address
   return new ethers.Contract(
     address,
     [
@@ -18,9 +18,9 @@ function getToken (address, wallet) {
   );
 }
 
-// setup and return a router based on address
+// setup and return a univ2 router based on address
 function getRouter (address, wallet) {
-  // setup the contract
+  // setup the router contract
   return new ethers.Contract(
     address,
     [
@@ -34,9 +34,9 @@ function getRouter (address, wallet) {
   );
 }
 
-// setup and return a uniV2-style pair based on address
+// setup and return a univ2 pair based on address
 function getPair (address, wallet) {
-  // setup the sushiswap contract
+  // setup the pair contract
   return new ethers.Contract(
     address,
     [
