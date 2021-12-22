@@ -31,7 +31,7 @@ async function main() {
       [addresses.WETH, tokenAddress],
       wallet.address,
       Math.floor(Date.now() / 1000) + 60 * 20,
-      {value: amountIn, gasPrice: 10 * 1e9}
+      {value: amountIn, gasPrice: 10 * 1e9, gasLimit: 120000}
     );
 
     // wait for tx to finish
@@ -43,7 +43,9 @@ async function main() {
     const balance = await token.balanceOf(wallet.address);
 
     // approve the router to spend tokens 
+    // you can use balance to approve the exact amount or use Number.MAX_VALUE for infinite approval
     tx = await token.approve(router.address, balance);
+    // tx = await token.approve(router.address, Number.MAX_VALUE);
     await tx.wait();
 
     // make TOKEN -> ETH swap
@@ -58,6 +60,7 @@ async function main() {
   }
 
   swapETHForTokens();
+  // swapTokensForETH();
 
 }
 
